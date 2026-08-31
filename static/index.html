@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RASA-Analyst · GEO Workbench</title>
+  <link rel="stylesheet" href="/assets/styles.css?v=1.4.0" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-left">
+      <img class="mark" src="/assets/logo.png" alt="" />
+      <span class="bar-brand">Nebula</span>
+      <span class="bar-rule" aria-hidden="true"></span>
+      <span class="bar-product">GEO Workbench</span>
+    </div>
+    <div id="status" class="status" data-state="checking"><span class="dot"></span> Checking Ollama</div>
+  </header>
+
+  <main class="workspace">
+    <section class="panel input-panel">
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab on" data-tab="paste">Paste copy</button>
+        <button type="button" class="tab" data-tab="url">From URL</button>
+        <button type="button" class="tab" data-tab="file">Upload file</button>
+      </div>
+
+      <label class="field" data-pane="paste">
+        <span class="field-head">Marketing copy or page text <span id="count">0 / 20,000</span></span>
+        <textarea id="content" maxlength="20000" rows="10" placeholder="Paste a landing section, FAQ, product page, or Answers Hub draft…"></textarea>
+      </label>
+      <label class="field hidden" data-pane="url">
+        <span class="field-head">Public URL</span>
+        <input id="url" type="url" placeholder="https://www.example.com/product" />
+        <small>Public pages only. This is the only path that leaves the machine.</small>
+      </label>
+      <label class="field hidden" data-pane="file">
+        <span class="field-head">Upload file</span>
+        <input id="file" type="file" accept=".txt,.md,.csv,.html,.htm,.docx" />
+        <small>.txt, .md, .csv, .html, or .docx · max 2 MB</small>
+      </label>
+
+      <div class="model-field">
+        <span class="field-head">Ollama model</span>
+        <div class="model-box" id="model-label">nebulatech/rasa-analyst:latest</div>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="run" class="primary" disabled>✦ Analyze →</button>
+      </div>
+      <p id="error" class="error" hidden></p>
+      <p class="privacy">Your data stays local. No prompts leave this machine unless you fetch a URL.</p>
+    </section>
+
+    <section class="panel intel-panel">
+      <div id="idle" class="empty-state">
+        <p class="kicker">AI Discoverability Engine</p>
+        <p class="empty-title">RASA-Analyst</p>
+        <p class="empty-copy">Score a page or snippet for AI-native discoverability.</p>
+        <p class="empty-copy">Scoring stays on this machine through Ollama.</p>
+        <ol class="eval-list">
+          <li><span>01</span> Retrieval</li>
+          <li><span>02</span> Semantic</li>
+          <li><span>03</span> Entity</li>
+          <li><span>04</span> Synthesis</li>
+          <li><span>05</span> Citation</li>
+        </ol>
+        <p class="empty-lead">Five dimensions.<br />One actionable GEO readiness score.</p>
+        <p class="empty-hint">Paste copy, then Analyze →</p>
+        <a class="ref" href="https://www.nebulatech.in/research/rasa" target="_blank" rel="noopener noreferrer">Explore the RASA Framework →</a>
+      </div>
+
+      <div id="result" class="results-state" hidden>
+        <div id="oos-hero" class="oos-hero" hidden>
+          <p class="kicker">Out of scope</p>
+          <p class="oos-title">This content cannot be evaluated by RASA-Analyst.</p>
+        </div>
+        <div id="score-hero">
+          <p class="kicker">GEO Readiness</p>
+          <div class="score-row">
+            <p class="score"><span id="total">0.00</span> <small>/ 10</small></p>
+            <span id="verdict" class="verdict">—</span>
+          </div>
+        </div>
+        <p class="meta" id="meta"></p>
+        <div id="bars" class="metrics"></div>
+        <div class="notes">
+          <div class="note">
+            <p class="kicker">Priority fix</p>
+            <p id="fix"></p>
+          </div>
+          <div class="note">
+            <p class="kicker">Failure modes</p>
+            <ul id="failures"></ul>
+          </div>
+        </div>
+        <div class="export">
+          <button type="button" id="copy" class="text-link">Copy report</button>
+          <button type="button" id="download" class="text-link">Download JSON</button>
+        </div>
+        <a class="ref ref-quiet" href="https://www.nebulatech.in/research/rasa" target="_blank" rel="noopener noreferrer">Scoring framework: RASA Framework →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://www.nebulatech.in" target="_blank" rel="noopener noreferrer">Nebula Personalization Tech Solutions Pvt. Ltd.</a>
+  </footer>
+  <script src="/assets/app.js?v=1.4.0"></script>
+</body>
+</html>

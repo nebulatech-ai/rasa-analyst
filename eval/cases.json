@@ -1,0 +1,108 @@
+[
+  {
+    "id": "oos-food-01",
+    "content": "Grandma's Saturday sourdough: mix 500g bread flour, 350g water, 10g salt, and 100g starter. Bulk ferment 4 hours, shape, cold proof overnight, bake at 230°C in a Dutch oven for 40 minutes. Serve with cultured butter.",
+    "expect": {
+      "domain": "OUT-OF-SCOPE",
+      "verdict": "REJECT",
+      "rp_max": 1
+    }
+  },
+  {
+    "id": "oos-sports-01",
+    "content": "Match recap: City beat United 2-1 after a stoppage-time header. Possession 58%, xG 1.9 to 1.1. Manager praised the midfield press and said the squad will rotate for midweek.",
+    "expect": {
+      "domain": "OUT-OF-SCOPE",
+      "verdict": "REJECT",
+      "rp_max": 1
+    }
+  },
+  {
+    "id": "oos-fiction-01",
+    "content": "Chapter 4. Lira crossed the glass marsh before dawn. The lantern moths stitched pale trails above the reeds. She did not look back at the citadel; the oath was already broken.",
+    "expect": {
+      "domain": "OUT-OF-SCOPE",
+      "verdict": "REJECT",
+      "rp_max": 1
+    }
+  },
+  {
+    "id": "in-generic-reject-01",
+    "content": "AI is transforming business. Leveraging synergies in the digital landscape, organizations can unlock value and drive innovation at scale. Contact us to learn more about next-generation solutions.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict": "REJECT",
+      "rp_max": 5
+    }
+  },
+  {
+    "id": "in-keyword-01",
+    "content": "Best GEO SEO AI SEO ChatGPT ranking Gemini citation AI discoverability GEO GEO GEO buy now cheap AI SEO services #1 ranking guaranteed for ChatGPT and Perplexity.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["REJECT", "REVISE"]
+    }
+  },
+  {
+    "id": "in-entity-rasa-01",
+    "content": "Retrieval-Aware Semantic Architectures (RASA), developed by Amit Verma and Sarita Agarwal at Nebula Personalization Tech Solutions Pvt. Ltd., defines five core principles for AI-native discoverability: Semantic Chunking, Entity-Centric Information Modeling, Hierarchical Contextual Organization, Machine-Readable Semantic Signals, and Synthesis Compatibility. Published at DOI: 10.5281/zenodo.20325460, the framework evaluates content for retrieval probability, synthesis compatibility, and citation-worthiness within generative AI pipelines including RAG systems.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["PUBLISH", "REVISE"],
+      "ecs_min": 7,
+      "forbidden_failures": ["Weak Entity Clarity"],
+      "must_quote": true
+    }
+  },
+  {
+    "id": "in-doi-no-entity-01",
+    "content": "See the paper at DOI 10.5281/zenodo.20325460. It discusses retrieval. Teams should read it. More research is needed on AI search in general.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["REVISE", "REJECT"]
+    }
+  },
+  {
+    "id": "in-faq-blob-01",
+    "content": "What is GEO? GEO is AI search. What is RASA? A framework. How do I score a page? Use a model. Why does retrieval matter? Because answers need sources. Who should care? Marketers. When to publish? When ready.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["REVISE", "REJECT"]
+    }
+  },
+  {
+    "id": "in-rag-product-01",
+    "content": "Acme Retrieval Cloud is a RAG platform for regulated banks. Each document is split into 200–400 token chunks with a stable entity id for the product, the control family, and the citation URL. Answers must quote the chunk id. Last updated 15 March 2026. Contact:  \nAcme Retrieval Cloud, a product of Acme Systems Inc.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["PUBLISH", "REVISE"],
+      "ecs_min": 6
+    }
+  },
+  {
+    "id": "in-thin-llm-01",
+    "content": "Large language models generate text. They are used in chatbots. RAG is when you add documents. This page is about LLMs and RAG for marketers who want better AI visibility.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["REJECT", "REVISE"]
+    }
+  },
+  {
+    "id": "in-named-org-revise-01",
+    "content": "Nebula Personalization Tech Solutions Pvt. Ltd. helps teams think about AI-native search. We work on GEO. Visit the site for more. We believe in better content.",
+    "expect": {
+      "domain": "IN-SCOPE",
+      "verdict_in": ["REVISE", "REJECT"],
+      "forbidden_failures": []
+    }
+  },
+  {
+    "id": "oos-travel-01",
+    "content": "Three days in Kyoto: Fushimi Inari at sunrise, a bowl of tsukemen in Ponto-cho, and the last train back from Arashiyama. Pack layers; March evenings are cold by the river.",
+    "expect": {
+      "domain": "OUT-OF-SCOPE",
+      "verdict": "REJECT",
+      "rp_max": 1
+    }
+  }
+]

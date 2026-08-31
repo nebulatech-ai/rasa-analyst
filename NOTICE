@@ -1,0 +1,16 @@
+RASA-Analyst workbench
+Copyright (c) 2026 Nebula Personalization Tech Solutions Pvt. Ltd.
+
+This repository is the local scoring UI and engine. Weights, verdicts, and
+JSON validation are implemented here.
+
+The companion Ollama model `nebulatech/rasa-analyst` is derived from Meta
+Llama 3.1. Use of that model is subject to the Llama 3.1 Community License:
+https://www.llama.com/llama3_1/license/
+
+RASA-Analyst is a GEO / AI-native discoverability aid. It does not claim
+access to ChatGPT, Gemini, or other proprietary ranking internals.
+
+Paper: Amit Verma & Sarita Agarwal, Retrieval-Aware Semantic Architectures
+for AI-Native Search Systems, DOI 10.5281/zenodo.20325460
+https://www.nebulatech.in

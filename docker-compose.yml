@@ -1,0 +1,14 @@
+services:
+  rasa-analyst:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      RASA_ENV: production
+      RASA_HOST: 0.0.0.0
+      RASA_PORT: "8787"
+      RASA_ALLOWED_HOSTS: "*"
+      OLLAMA_HOST: http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
